@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import { userDocument } from "./user.model";
 import {customAlphabet} from 'nanoid'
 
-const nanoId = customAlphabet('abcdefghijklmnopqrstuvwxyz0123456789', 10)
+const nanoId = customAlphabet('abcdefghijklmnopqrstuvwxyz0123456789')
 
 /**
  * FILL IN
@@ -27,7 +27,7 @@ const productSchema = new mongoose.Schema(
             type: String,
             required: true,
             unique: true,
-            default: () => `product_${nanoId}`
+            default: () => `product_${nanoId()}`
         },
         user: {type: mongoose.Schema.Types.ObjectId, ref: 'user'},
         title: {type: String, required: true},
