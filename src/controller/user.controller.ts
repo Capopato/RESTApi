@@ -12,7 +12,7 @@ export const createUserHandler = async (
         const user = await createUser(req.body)
         return res.send(omit(user.toJSON(), 'password'))
     } 
-    catch(e: any) {
+    catch(e) {
         logger.error(e)
         return res.status(409).send(e.message)
     }

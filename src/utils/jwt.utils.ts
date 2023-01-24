@@ -29,7 +29,7 @@ export const validateJwt = (token: string) => {
             expired: false,
             decoded: decoded
         }
-    }catch(error: any) {
+    }catch(error) {
         return {
             valid: false,
             expired: error.message == 'jwt expired',

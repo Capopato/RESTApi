@@ -34,7 +34,7 @@ export const updateProductHandler = async (req: Request<updateProductInput['para
         }
     
         // If the user that tries to update the product is not the user that created the product. Return 403.
-        if(String(product.user) != userId){
+        if(product.user != userId){
             return res.sendStatus(403)
         }
     
